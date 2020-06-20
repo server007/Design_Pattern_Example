@@ -1,0 +1,7 @@
+#1. I used factory pattern for making notification type classes, as types of notifications may increase in future.
+
+#2. sms and email services are mocked as per requirements and print statements on spring console.
+
+#3. Signup and Login is created for user
+
+#4. Signup is used to subscribe for notifications
