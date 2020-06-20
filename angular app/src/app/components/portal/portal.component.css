@@ -1,0 +1,18 @@
+.bodyofcard {
+    padding-left: 4%;
+    padding-top: 2%;
+}
+
+a {
+    color: rgb(56, 97, 230);
+    cursor: pointer;
+}
+
+a:hover {
+    color: rgb(7, 37, 134);
+}
+
+.logout {
+    position: absolute;
+    padding-left: 90%;
+}

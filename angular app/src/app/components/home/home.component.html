@@ -1,0 +1,65 @@
+<!-- <section class="home-newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="single">
+                    <h2>Subscribe to the Notifications</h2>
+
+                    <form #form>
+                        <div class="input-group">
+
+                            <input type="email" class="form-control" placeholder="Enter your email" [(ngModel)]="user.email" id="InputEmail1" autocomplete="off" pattern="[a-z0-9._%+-]+@nagarro.com" name="email" required>
+
+                            <span class="input-group-btn">
+                            <button class="btn btn-theme" (click)="form.checkValidity() ? submitEmail() : null" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="sendnotf">
+    <h3> S E N D - N O T I F I C A T I O N </h3>
+    <br>
+    <form #form2>
+
+        <div class="form-group">
+            <label for="notType">Notification Type</label>
+            <select id="notType" [(ngModel)]="notif.type" name="notType" class="form-control" required>
+                    <option [ngValue]="notType" [selected]="true" disabled>Select Notification Type</option>
+                    <option  *ngFor="let notType of notTypes; let i = index">{{notType}}</option>
+                    <!-- <option [ngValue] selected>{{reqTypes[0]}}</option> -->
+                </select>
+        </div>
+        <div class="form-group ">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" [(ngModel)]="notif.description" name="description" placeholder="Describe the notification" maxlength="100" required></textarea>
+        </div>
+        <div class="form-group ">
+            <label for="recipient">Recipient</label>
+            <div class="col rad">
+                <input type="radio" (click)="toggle2()" value="all" name="recipient" [(ngModel)]="notif.recipient"> A l l
+                <input type="radio" (click)="toggle()" value="group" name="recipient" [(ngModel)]="notif.recipient"> G r o u p
+                <input type="radio" (click)="toggle()" value="person" name="recipient" [(ngModel)]="notif.recipient"> P e r s o n
+                <br>
+            </div>
+            <br>
+            <div class="col" *ngIf='all'>
+                <input type="text" class="form-control" id="name" [(ngModel)]="nameof" name="recipientName" placeholder="Recipient with seperated by comma" maxlength="100">
+            </div>
+        </div>
+        <span class="input-group-btn">
+            <button class="btn btn-primary" (click)="form2.checkValidity() ? send() : null" type="submit">Send Notification</button>
+        </span>
+        <div>
+            <a class="nav-link" routerLink='/login'>Go to Login page</a>
+
+        </div>
+    </form>
+</div>

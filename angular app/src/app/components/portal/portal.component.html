@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <div class="logout">
+        <a class="nav-link" routerLink='/login' (click)="logout()" class="card-link">Logout</a>
+    </div>
+    <h1 class="display-4">Notifications</h1>
+    <p class="lead"> ~Welcome To Your Online Portal~</p>
+
+</div>
+<div class="bodyofcard row">
+    <div class="card col-md-4" style="width: 18rem;" *ngFor="let item of data2">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.type }}</h5>
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+            <p class="card-text">{{item.description}}</p>
+            <a class="nav-link" (click)="clearNotif(item)" class="card-link">Clear</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
+        </div>
+    </div>
+</div>
